@@ -28,7 +28,6 @@ interface ProductProps {
 
 export default function ProductItem({ product }: ProductProps) {
     return (
-        <CartContextProvider>
             <div className='p-2 md:p-6 flex flex-col items-center justify-between gap-3 border rounded-lg hover:scale-110 hover:shadow-lg transition-all ease-in-out cursor-pointer'>
              <Image
                 src={product.image}
@@ -60,6 +59,5 @@ export default function ProductItem({ product }: ProductProps) {
             </Dialog>
 
         </div>
-        </CartContextProvider>
     );
 }

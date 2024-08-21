@@ -9,7 +9,6 @@ interface CartContextType {
     getTotalCartAmount: () => number;
     getTotalCartItems: () => number;
 }
-import { useEffect } from "react";
 
 export const CartContext = createContext<CartContextType | undefined>(undefined);
 
@@ -26,8 +25,8 @@ const CartContextProvider = ({ children }: any) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
     console.log(cartItems);    
 
-    const addToCart = (itemId: number) => {
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}));
+    const addToCart = (itemId: number, number_of_products: number) => {
+        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+number_of_products}));
         // console.log(cartItems);
         alert("Item Added Successfully");
     }
