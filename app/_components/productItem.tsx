@@ -10,7 +10,6 @@ import {
     DialogTrigger,
   } from "@/components/ui/dialog"
 import ProductItemDetail from './productItemDetail';
-// Removed unused import `CartContext` here
 
 interface Product {
     name: string;

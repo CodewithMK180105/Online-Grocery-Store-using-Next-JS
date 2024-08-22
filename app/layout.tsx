@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ConditionalHeader from "./_components/headerCondition";
 import CartContextProvider from "./context/cartContextProvider";
+import { Toaster } from "@/components/ui/toaster"; // Import the Toaster component
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <CartContextProvider>
           <ConditionalHeader />
           {children}
+          <Toaster /> {/* Add Toaster here to make toasts available globally */}
         </CartContextProvider>
         </body>
     </html>

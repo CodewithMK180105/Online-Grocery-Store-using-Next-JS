@@ -7,6 +7,8 @@ import { useContext, useState } from "react";
 import { TiShoppingCart } from "react-icons/ti";
 import { CartContext } from "../context/cartContextProvider"; // Corrected the import path
 
+
+
 interface Product {
     name: string;
     description: string;
@@ -36,6 +38,7 @@ export default function ProductItemDetail({ product }: ProductProps){
     }
 
     const { addToCart } = cartContext;
+
 
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 p-4 bg-white text-black">
@@ -67,6 +70,7 @@ export default function ProductItemDetail({ product }: ProductProps){
                         <TiShoppingCart />
                         Add To Cart
                     </Button>
+                    
                 </div>
                 <h2><span className="font-bold">Category: </span>{product.category}</h2>
             </div>
