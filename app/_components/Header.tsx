@@ -12,7 +12,7 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import {
     Sheet,
     SheetContent,
@@ -23,12 +23,29 @@ import {
   } from "@/components/ui/sheet"
   import CartItemList from "./cartItemList";
   
+import { CartContext } from "../context/cartContextProvider"; // Corrected the import path
+
+  
   
 
 export default function Header(){
 
     const [isLogin,setIsLogin]=useState(true);
-    const [totalCartItem,setTotalCartItem]=useState(0);
+
+    const cartContext = useContext(CartContext);
+    if (!cartContext) {
+        throw new Error("CartContext must be used within a CartContextProvider");
+    }
+    const { cartItems } = cartContext;
+
+    const totalCartItem=(cartItems: Record<number, number>): number =>{
+        let total=0;
+        for(const i in cartItems){
+            if(cartItems[i]==0) continue;
+            else total++;
+        }
+        return total;
+    }
 
     return(
         <div className="p-5 shadow-md flex justify-between">
@@ -77,14 +94,14 @@ export default function Header(){
                 <Sheet>
             <SheetTrigger>
                 <h2 className="flex items-center text-lg"> <ShoppingBasket className="h-7 w-7 mr-3"/> 
-                    <span className="bg-primary text-white px-2 rounded-full">{totalCartItem}</span>
+                    <span className="bg-primary text-white px-2 rounded-full">{totalCartItem(cartItems)}</span>
                 </h2>
             </SheetTrigger>
                 <SheetContent>
                     <SheetHeader>
                     <SheetTitle className="bg-primary text-white font-bold text-lg p-2">My Cart</SheetTitle>
                     <SheetDescription>
-                        <CartItemList />
+                        <CartItemList cartItems={cartItems} />
                     </SheetDescription>
                     </SheetHeader>
                 </SheetContent>

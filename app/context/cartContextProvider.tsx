@@ -35,17 +35,21 @@ const CartContextProvider = ({ children }: any) => {
         console.log(cartItems);
         toast({
             description: "Item added Successfully",
-          })
+        })
     }
     
     const removeFromCart = (itemId: number) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
         console.log(cartItems);
-        alert("Item Removed Successfully")
+        // alert("Item Removed Successfully")
+        toast({
+            description: "Item added Successfully",
+        })
     }
 
     const getTotalCartAmount = () => {
         let totalAmount = 0;
+        console.log(totalAmount);
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
                 let itemInfo = productItems.find((product) => product.id === Number(item))
@@ -54,6 +58,8 @@ const CartContextProvider = ({ children }: any) => {
                 }
             }
         }
+        console.log(totalAmount);
+
         return totalAmount;
     }
 
@@ -66,7 +72,8 @@ const CartContextProvider = ({ children }: any) => {
         }
         return totalItems;
     }
-    console.log(getTotalCartItems);
+    // console.log(getTotalCartItems);
+    console.log(getTotalCartAmount);
 
     const contextValue = { cartItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems };
 
