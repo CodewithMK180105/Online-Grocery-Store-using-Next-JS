@@ -66,13 +66,11 @@ const CartContextProvider = ({ children }: any) => {
         let totalItems = 0;
         for (const item in productItems) {
             if (cartItems[item] > 0) {
-                totalItems += cartItems[item];
+                totalItems += 1;
             }
         }
         return totalItems;
     }
-    // console.log(getTotalCartItems);
-    console.log(getTotalCartAmount);
 
     const contextValue = { cartItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems };
 

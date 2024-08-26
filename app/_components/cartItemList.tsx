@@ -35,8 +35,8 @@ export default function CartItemList({ cartItems }: { cartItems: Record<number, 
                                     <Image
                                         src={product.image}
                                         alt={`${product.name} image`}
-                                        height={100}
-                                        width={100}
+                                        height={80}
+                                        width={80}
                                         className="border p-2"
                                     />
                                     <div>
