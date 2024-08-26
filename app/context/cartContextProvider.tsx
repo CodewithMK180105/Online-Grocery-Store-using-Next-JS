@@ -43,7 +43,7 @@ const CartContextProvider = ({ children }: any) => {
         console.log(cartItems);
         // alert("Item Removed Successfully")
         toast({
-            description: "Item added Successfully",
+            description: "1 - Item removed Successfully",
         })
     }
 
@@ -58,7 +58,6 @@ const CartContextProvider = ({ children }: any) => {
                 }
             }
         }
-        console.log(totalAmount);
 
         return totalAmount;
     }

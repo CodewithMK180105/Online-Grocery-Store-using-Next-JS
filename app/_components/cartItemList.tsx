@@ -1,7 +1,6 @@
 import { TrashIcon } from "lucide-react";
 import productItems from "../_utils/productItems";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { useContext } from "react";
 import { CartContext } from "../context/cartContextProvider";
 
@@ -12,11 +11,11 @@ export default function CartItemList({ cartItems }: { cartItems: Record<number, 
     if (!cartContext) {
         return <div>Error: CartContext not found</div>; // Handle case where context is not available
     }
-    const {getTotalCartAmount}=cartContext;
+    const {removeFromCart}=cartContext;
 
     return (
         <>
-            <div>
+            <div className="h-[75vh] overflow-auto hide-scrollbar">
                 {Object.entries(cartItems)
                     .filter(([productId, quantity]) => quantity > 0) // Filter items with quantity > 0
                     .map(([productId, quantity], index) => {
@@ -46,16 +45,13 @@ export default function CartItemList({ cartItems }: { cartItems: Record<number, 
                                         <h2 className="text-lg font-bold">${product.sellingPrice} X {cartItems[Number(productId)]}</h2>
                                     </div>
                                 </div>  
-                                <TrashIcon className="cursor-pointer" />  
+                                <TrashIcon className="cursor-pointer" onClick={()=>removeFromCart(product.id)} />  
                             </div>
                         );
                     })}
             </div>
 
-            <div className="absolute w-[90%] bottom-6 flex flex-col">
-                <h2 className="text-lg font-bold flex justify-between">Subtotal <span>${getTotalCartAmount()}</span></h2>
-                <Button>View Cart</Button>
-            </div>
+            
         </>
     );
 }
