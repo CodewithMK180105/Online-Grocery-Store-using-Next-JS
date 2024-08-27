@@ -26,13 +26,13 @@ const getDefaultCart = (): Record<number, number> => {
 const CartContextProvider = ({ children }: any) => {
 
     const [cartItems, setCartItems] = useState(getDefaultCart());
-    console.log(cartItems);  
+    // console.log(cartItems);  
     
     const { toast } = useToast()
 
     const addToCart = (itemId: number, number_of_products: number) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+number_of_products}));
-        console.log(cartItems);
+        // console.log(cartItems);
         toast({
             description: "Item added Successfully",
         })

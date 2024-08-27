@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useContext } from "react";
 import { CartContext } from "../context/cartContextProvider";
 
+
 export default function CartItemList({ cartItems }: { cartItems: Record<number, number> }) {
 
     const cartContext = useContext(CartContext);
