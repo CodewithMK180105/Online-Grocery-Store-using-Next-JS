@@ -1,6 +1,7 @@
 import productItems from '../../../_utils/productItems';
 import ProductItem from '../../../_components/productItem';
 
+
 interface CategoryListProps {
   categoryName: string;
 }
