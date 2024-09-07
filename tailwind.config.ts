@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -76,19 +76,20 @@ const config = {
   },
   plugins: [
     require("tailwindcss-animate"),
+    require('tailwind-scrollbar'),
     function ({ addUtilities }: { addUtilities: (utilities: Record<string, any>) => void }) {
-      addUtilities({
+      const newUtilities = {
         ".hide-scrollbar": {
-          /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
           "-ms-overflow-style": "none", /* Internet Explorer 10+ */
           "scrollbar-width": "none", /* Firefox */
         },
         ".hide-scrollbar::-webkit-scrollbar": {
           display: "none", /* Hide scrollbar for WebKit browsers */
         },
-      });
+      };
+      addUtilities(newUtilities);
     },
   ],
-} satisfies Config
+}
 
 export default config

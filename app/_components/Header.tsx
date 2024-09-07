@@ -104,7 +104,7 @@ export default function Header() {
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>
-              <SheetTitle className="bg-primary text-white font-bold text-lg p-2 text-center">
+              <SheetTitle className="bg-primary text-white font-bold text-lg p-2 text-center mt-5">
                 My Cart
               </SheetTitle>
               <SheetDescription>
@@ -113,7 +113,7 @@ export default function Header() {
             </SheetHeader>
             <SheetClose asChild>
               <div className="absolute w-[90%] bottom-6 flex flex-col">
-                <h2 className="text-lg font-bold flex justify-between">
+                <h2 className="text-lg font-bold flex justify-between bg-white">
                   Subtotal <span>${getTotalCartAmount()}</span>
                 </h2>
                 <Button onClick={()=>{router.push('/checkout')}}>Checkout</Button>
