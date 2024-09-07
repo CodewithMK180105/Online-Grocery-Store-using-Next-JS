@@ -4,7 +4,7 @@ import productItems from "../_utils/productItems"; // Corrected the import path
 
 interface CartContextType {
     cartItems: Record<number, number>;
-    addToCart: (itemId: number) => void;
+    addToCart: (itemId: number, quantity: number) => void;
     removeFromCart: (itemId: number) => void;
     getTotalCartAmount: () => number;
     getTotalCartItems: () => number;
