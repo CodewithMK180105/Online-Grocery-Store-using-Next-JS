@@ -12,6 +12,7 @@ import {
 import ProductItemDetail from './productItemDetail';
 
 interface Product {
+    id: number;
     name: string;
     description: string;
     mrp: number;
