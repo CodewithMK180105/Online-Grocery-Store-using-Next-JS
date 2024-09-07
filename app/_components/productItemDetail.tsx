@@ -10,6 +10,7 @@ import { CartContext } from "../context/cartContextProvider"; // Corrected the i
 
 
 interface Product {
+    id: number;
     name: string;
     description: string;
     mrp: number;
