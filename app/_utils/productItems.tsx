@@ -30,6 +30,8 @@ import green_tea from '../_utils/assets/green-tea.png';
 import yogurt from '../_utils/assets/yogurt.png';
 import salmon from '../_utils/assets/salmon.png';
 import chicken_breast from '../_utils/assets/chicken-breast.png';
+import mango from '../_utils/assets/mango.png';
+import papaya from '../_utils/assets/Papaya.png';
 
 const productItems = [
   {
@@ -351,7 +353,29 @@ const productItems = [
     image: chicken_breast,
     item_quantity: '500gm',
     category: 'Chicken_and_Egg'
-  }
+  },
+  {
+    id: 33,
+    name: 'Mango',
+    description: 'Sweet and juicy mangoes, perfect for desserts.',
+    mrp: 150,
+    sellingPrice: 130,
+    image: mango,
+    item_quantity: '1kg',
+    category: 'Fruits'
+  },
+  {
+    id: 34,
+    name: 'Papaya',
+    description: 'Fresh papaya, rich in vitamins and antioxidants.',
+    mrp: 60,
+    sellingPrice: 50,
+    image: papaya,
+    item_quantity: '1 pc',
+    category: 'Fruits'
+  },
+  // Add more fruits like Grapes, Kiwi, etc.
+  
 ];
 
 export default productItems;
