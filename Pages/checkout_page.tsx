@@ -116,7 +116,7 @@ export default function CheckoutPage() {
   return (
     <>
       <h2 className="p-3 bg-primary text-xl font-bold text-center text-white">Checkout</h2>
-      <div className="p-5 px-5 md:px-10 flex flex-col md:flex-row justify-center py-8">
+      <div className="p-5 px-5 md:px-10 flex flex-col md:flex-row justify-evenly gap-6 py-8">
         <div className="mx-10 md:col-span-2 mb-8 w-3/4">
           <h2 className="font-bold text-xl sm:text-3xl">Billing Details</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-10 mt-3">
@@ -169,7 +169,7 @@ export default function CheckoutPage() {
             {isSubmitted && errors.address && <p className="text-red-500 text-sm">{errors.address}</p>}
           </div>
         </div>
-        <div className="mt-8 border w-full md:w-1/2 lg:w-1/3">
+        <div className="border w-full md:w-1/2 lg:w-1/3">
           <h2 className="p-3 bg-gray-200 font-bold text-center">Total Cart ({noOfItemsAdded})</h2>
           <div className="p-4 flex flex-col gap-4">
             <h2 className="font-bold flex justify-between">
