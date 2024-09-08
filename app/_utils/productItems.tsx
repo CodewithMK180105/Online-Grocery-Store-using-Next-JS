@@ -32,6 +32,8 @@ import salmon from '../_utils/assets/salmon.png';
 import chicken_breast from '../_utils/assets/chicken-breast.png';
 import mango from '../_utils/assets/mango.png';
 import papaya from '../_utils/assets/Papaya.png';
+import spinach from '../_utils/assets/spinach.png';
+import broccoli from '../_utils/assets/broccoli.png';
 
 const productItems = [
   {
@@ -374,7 +376,28 @@ const productItems = [
     item_quantity: '1 pc',
     category: 'Fruits'
   },
-  // Add more fruits like Grapes, Kiwi, etc.
+  {
+    id: 35,
+    name: 'Spinach',
+    description: 'Fresh spinach, rich in iron and nutrients.',
+    mrp: 40,
+    sellingPrice: 35,
+    image: spinach,
+    item_quantity: '500gm',
+    category: 'Vegetables'
+  },
+  {
+    id: 36,
+    name: 'Broccoli',
+    description: 'Fresh broccoli, ideal for steaming and salads.',
+    mrp: 70,
+    sellingPrice: 60,
+    image: broccoli,
+    item_quantity: '1 pc',
+    category: 'Vegetables'
+  },
+  // Add more vegetables like Peas, Ginger, Garlic, etc.
+  
   
 ];
 

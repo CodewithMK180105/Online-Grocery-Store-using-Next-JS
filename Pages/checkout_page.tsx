@@ -116,8 +116,8 @@ export default function CheckoutPage() {
   return (
     <>
       <h2 className="p-3 bg-primary text-xl font-bold text-center text-white">Checkout</h2>
-      <div className="p-5 px-5 md:px-10 grid grid-cols-1 md:grid-cols-3 py-8">
-        <div className="mx-10 md:col-span-2 mb-8">
+      <div className="p-5 px-5 md:px-10 flex flex-col md:flex-row justify-center py-8">
+        <div className="mx-10 md:col-span-2 mb-8 w-3/4">
           <h2 className="font-bold text-xl sm:text-3xl">Billing Details</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-10 mt-3">
             <div>
@@ -139,7 +139,7 @@ export default function CheckoutPage() {
               {isSubmitted && errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-10 mt-3">
+          <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-10">
             <div>
               <Input 
                 placeholder="Phone..." 
@@ -169,7 +169,7 @@ export default function CheckoutPage() {
             {isSubmitted && errors.address && <p className="text-red-500 text-sm">{errors.address}</p>}
           </div>
         </div>
-        <div className="mx-5 border">
+        <div className="border w-full md:w-1/2 lg:w-1/3">
           <h2 className="p-3 bg-gray-200 font-bold text-center">Total Cart ({noOfItemsAdded})</h2>
           <div className="p-4 flex flex-col gap-4">
             <h2 className="font-bold flex justify-between">
