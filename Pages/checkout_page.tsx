@@ -116,10 +116,10 @@ export default function CheckoutPage() {
   return (
     <>
       <h2 className="p-3 bg-primary text-xl font-bold text-center text-white">Checkout</h2>
-      <div className="p-5 px-5 md:px-10 flex flex-col md:flex-row justify-evenly gap-6 py-8">
-        <div className="mx-10 md:col-span-2 mb-8 w-3/4">
+      <div className="p-5 flex flex-col lg:flex-row justify-evenly gap-6 py-8">
+        <div className="w-full lg:w-2/3 mx-auto mb-8">
           <h2 className="font-bold text-xl sm:text-3xl">Billing Details</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-10 mt-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5 mt-3">
             <div>
               <Input 
                 placeholder="Name..." 
@@ -139,7 +139,7 @@ export default function CheckoutPage() {
               {isSubmitted && errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
             </div>
           </div>
-          <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-10">
+          <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5">
             <div>
               <Input 
                 placeholder="Phone..." 
@@ -169,7 +169,8 @@ export default function CheckoutPage() {
             {isSubmitted && errors.address && <p className="text-red-500 text-sm">{errors.address}</p>}
           </div>
         </div>
-        <div className="border w-full md:w-1/2 lg:w-1/3">
+        
+        <div className="border w-full lg:w-1/3">
           <h2 className="p-3 bg-gray-200 font-bold text-center">Total Cart ({noOfItemsAdded})</h2>
           <div className="p-4 flex flex-col gap-4">
             <h2 className="font-bold flex justify-between">
@@ -190,7 +191,7 @@ export default function CheckoutPage() {
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>
                 <Button className="w-full" onClick={() => {
-                  handleSubmit(); // Handle form submission
+                  handleSubmit(); 
                   setIsDialogOpen(true);
                 }}>
                   Payment <ArrowBigRight />
